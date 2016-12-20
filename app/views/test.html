@@ -1,0 +1,229 @@
+<style type="text/css">
+
+
+	.praise-ranking{
+		height:350px;
+		background-color: white;
+		padding:0 10px 15px;
+	}
+
+	.ranking-main{
+		height:100%;
+		/*background-color: #19C7A8;*/
+		background-image: linear-gradient(to bottom, #19C7A8 60%, #00BEBD);
+		padding-top:310px;
+		border-radius: 4px;
+	}
+
+	.base-line{
+		width:86%;
+		height:3px;
+		background-color: #1AAFAC;
+		border-radius: 4px;
+		margin:0 auto;
+		position: relative;
+	}
+
+	.column-board{
+		width:300px;
+		height:270px;
+		background-color: yellow;
+		z-index: 100;
+		position: absolute;
+		bottom: 3px;
+		left:50%;
+		margin-left:-150px;
+	}
+
+	.column{
+		width:93px;
+		background-color: white;
+		border-top-left-radius: 6px;
+		border-top-right-radius: 6px;
+	}
+
+	.first-column{
+		padding:15px 5px 0;
+		text-align: center;
+		color:#058381;
+		position: absolute;
+		top: 0;
+		left:0;
+		height:270px;
+	}
+
+	.second-column{
+		text-align: center;
+		color:#058381;
+		position: absolute;
+		top: 135px;
+		left:103px;
+		height:135px;
+	}
+
+	.position-level{
+		padding:15px 5px 0;
+		position: relative;
+	}
+
+	.third-column{
+		text-align: center;
+		color:#058381;
+		position: absolute;
+		top: 230px;
+		left:206px;
+		height:40px;
+	}
+
+	.dish-name{
+		font-size: 14px;
+	}
+
+	.praise-icon{
+		width:16px;
+		height:16px;
+		margin-right:5px;
+		vertical-align: text-top;
+	}
+	.praise-num{
+		margin-top:10px;
+	}
+	.split-line{
+		width:100%;
+		border-bottom: 1px solid #0B8381;
+		margin:10px 0;
+	}
+
+	.sales-price p{
+		line-height: 25px;
+		font-size: 13px;
+	}
+	/*外部倒挂*/
+	.talkbubble {
+		width: 93px;
+		height: 140px;
+		background: #59DFCC;
+		position: relative;
+  		border-radius:10px;
+  		text-align: center;
+  		padding:10px 5px;
+	}
+	.talkbubble:before {
+		content:"";
+		position: absolute;
+		right: 45%;
+		top: 132px;
+		width: 0;
+		height: 0;
+		border-top: 13px solid transparent;
+		border-right: 12px solid #59DFCC;
+		border-bottom: 13px solid transparent;
+		transform:rotate(-90deg);
+	}
+
+	.out-tip{
+		position: absolute;
+		left:0;
+		bottom: 33px;
+	}
+
+	.test-btn{
+		height:34px;
+		padding:0 10px;
+		background-color: #59DFCC;
+		display: block;
+		margin:0 auto;
+		z-index: 1000;
+	}
+
+	.out-tip2{
+		float:left;
+	}
+
+</style>
+
+<div class="test-content">
+	<div class="talkbubble">
+		<p class="dish-name">鱼香肉丝</p>
+		 <div class="praise-num">
+		 	<img src="/images/praise.png" class="praise-icon">50
+		 </div>
+		 <div class="split-line"></div>
+		 <div class="sales-price">
+		 	<p>销量:100</p>
+		 	<p>单价:¥ 180</p>
+		 </div>
+	</div>
+
+
+	<!-- 点赞前三名 -->
+		<div class="praise-ranking" style="margin-top:30px;">
+			<div class="ranking-main">
+				<!-- 底部基线 -->
+				<div class="base-line">
+					<!-- 柱状区域 -->
+					<div class="column-board">
+						<div style="position: relative;">
+							<div style="position: absolute;bottom: 0;left:0">
+
+									 <!-- 有可能的外部倒挂 -->
+									 <div class="out-tip2">
+									 		<div class="talkbubble">
+									 			<p class="dish-name">鱼香肉丝</p>
+												 <div class="praise-num">
+												 	<img src="/images/praise.png" class="praise-icon">50
+												 </div>
+												 <div class="split-line"></div>
+												 <div class="sales-price">
+												 	<p>销量:100</p>
+												 	<p>单价:¥ 180</p>
+												 </div>
+									 		</div>
+									 </div>
+
+									 <div class="out-tip2">
+									 		<div class="talkbubble">
+									 			<p class="dish-name">鱼香肉丝</p>
+												 <div class="praise-num">
+												 	<img src="/images/praise.png" class="praise-icon">50
+												 </div>
+												 <div class="split-line"></div>
+												 <div class="sales-price">
+												 	<p>销量:100</p>
+												 	<p>单价:¥ 180</p>
+												 </div>
+									 		</div>
+									 </div>
+
+
+									 <div class="out-tip2">
+									 		<div class="talkbubble">
+									 			<p class="dish-name">鱼香肉丝</p>
+												 <div class="praise-num">
+												 	<img src="/images/praise.png" class="praise-icon">50
+												 </div>
+												 <div class="split-line"></div>
+												 <div class="sales-price">
+												 	<p>销量:100</p>
+												 	<p>单价:¥ 180</p>
+												 </div>
+									 		</div>
+									 </div>
+
+								 </div>
+							 </div>
+
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<button type="button" class="test-btn" ng-click="testRand()">点击测试排名显示效果</button>
+
+
+	
+</div>
+	
+
