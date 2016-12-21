@@ -1,42 +1,45 @@
   'use strict';
 
   angular.module('eparty').factory('httpInterceptor', [ '$q', '$injector',function($q, $injector) { 
-    var httpInterceptor = { 
-      'responseError' : function(response) { 
-        if (response.status === 401) { 
+    var httpInterceptor = {
+      'responseError' : function(response) {
+        var tipMsg ="";
+        if (response.status == 401) { 
           var rootScope = $injector.get('$rootScope'); 
           var state = $injector.get('$rootScope').$state.current.name; 
           rootScope.stateBeforLogin = state; 
           rootScope.$state.go("login"); 
 
-        } else if (response.status === 403) {
-          angular.element('#server_error_msg').text('您没有权限访问该网页...');
-          angular.element('#modal_server_error').modal('show');
+          tipMsg = "请重新登录";
 
-        } else if (response.status === 404) {
-          angular.element('#server_error_msg').text('您访问的网页不存在...');
-          angular.element('#modal_server_error').modal('show');
+        } else if (response.status == 404) {
+           tipMsg = "请求错误";
 
-        } else if (response.status === 400) {
-          angular.element('#server_error_msg').text('服务器出错，请稍后重试...');
-          angular.element('#modal_server_error').modal('show');
+        } else if (response.status == 400 || response.status == 500) {
+          tipMsg = "服务器出错";
 
-        } else if (response.status === 500) {
-          angular.element('#server_error_msg').text('服务器出错，请稍后重试...');
-          angular.element('#modal_server_error').modal('show');
-
-        } else if (response.status === 409) {
-          angular.element('#server_error_msg').text(response.statusText);
-          angular.element('#modal_server_error').modal('show');
+        } else if (response.status == 409) {
+          tipMsg = response.statusText;
         }
-         return $q.reject(response); 
+
+        angular.element('#tipBubble').show();
+        angular.element('#tipBubble').text(tipMsg);
+        setTimeout(hideError,2000);
+
+        return $q.reject(response); 
       }, 
       'response' : function(response) { 
         return response; 
-      } 
+      }
     };
     return httpInterceptor; 
-  }  
+
+    function hideError(){
+       angular.element('#tipBubble').fadeOut();
+    }
+
+  }
+
 ]);
 
   angular.module('eparty').config(['$httpProvider', function($httpProvider) {

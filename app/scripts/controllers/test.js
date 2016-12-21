@@ -1,28 +1,20 @@
 'use strict';
 
 angular.module('eparty')
-  .controller('TestCtrl', function ($scope) {
+  .controller('TestCtrl', function ($scope,$http,urlService) {
+	$scope.goPage = function ($event) {
+        $scope.page = $event.target.getAttribute('data');
+        alert($scope.page);
+    }
 
-  	$scope.testRand = function(){
-		var randNum1 = Math.floor(Math.random()*100+1);
-	  	var randNum2 = Math.floor(Math.random()*100+1);
-
-	  	var temp;
-	  	if(randNum1 < randNum2){
-	  		temp = randNum2;
-	  		randNum2 = randNum1;
-	  		randNum1 = temp;
-	  	}
-	  	// alert(randNum1+":"+randNum2);
-	  	var columnHeight1 = randNum1/100*270; 
-	  	var columnHeight2 = randNum2/100*270;
-	  	// alert(columnHeight1);
-
-	  	var topHeight1 = 270 - columnHeight1;
-	  	var topHeight2 = 270 - columnHeight2;
-	  	$("#secondColumn").css("height",columnHeight1).css("top",topHeight1);
-	  	$("#thirdColumn").css("height",columnHeight2).css("top",topHeight2);
-  	}
-  
+     $http({
+          method:'GET',
+          url:urlService.getBaseUrl()+'/api/v1/stores/6'
+          // params:'';
+      }).then(function(resp){
+      console.log(resp.statusText);
+        }, function(resp){
+        console.log("fail...");
+      });
 
   });

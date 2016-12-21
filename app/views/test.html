@@ -1,229 +1,98 @@
-<style type="text/css">
+ <style type="text/css">
+
+ .emample{
+ 	text-align: center;
+ 	padding-top:30px;
+ }
+
+ .split-line{
+ 	width:100%;
+ 	border-bottom: 1px dashed #999;
+ 	margin:20px 0;
+ }
 
 
-	.praise-ranking{
-		height:350px;
-		background-color: white;
-		padding:0 10px 15px;
-	}
+.show-box{
+    margin:0 auto; 
+    float:none; 
+    background:#fff; 
+}
 
-	.ranking-main{
-		height:100%;
-		/*background-color: #19C7A8;*/
-		background-image: linear-gradient(to bottom, #19C7A8 60%, #00BEBD);
-		padding-top:310px;
-		border-radius: 4px;
-	}
-
-	.base-line{
-		width:86%;
-		height:3px;
-		background-color: #1AAFAC;
-		border-radius: 4px;
-		margin:0 auto;
-		position: relative;
-	}
-
-	.column-board{
-		width:300px;
-		height:270px;
-		background-color: yellow;
-		z-index: 100;
-		position: absolute;
-		bottom: 3px;
-		left:50%;
-		margin-left:-150px;
-	}
-
-	.column{
-		width:93px;
-		background-color: white;
-		border-top-left-radius: 6px;
-		border-top-right-radius: 6px;
-	}
-
-	.first-column{
-		padding:15px 5px 0;
-		text-align: center;
-		color:#058381;
-		position: absolute;
-		top: 0;
-		left:0;
-		height:270px;
-	}
-
-	.second-column{
-		text-align: center;
-		color:#058381;
-		position: absolute;
-		top: 135px;
-		left:103px;
-		height:135px;
-	}
-
-	.position-level{
-		padding:15px 5px 0;
-		position: relative;
-	}
-
-	.third-column{
-		text-align: center;
-		color:#058381;
-		position: absolute;
-		top: 230px;
-		left:206px;
-		height:40px;
-	}
-
-	.dish-name{
-		font-size: 14px;
-	}
-
-	.praise-icon{
-		width:16px;
-		height:16px;
-		margin-right:5px;
-		vertical-align: text-top;
-	}
-	.praise-num{
-		margin-top:10px;
-	}
-	.split-line{
-		width:100%;
-		border-bottom: 1px solid #0B8381;
-		margin:10px 0;
-	}
-
-	.sales-price p{
-		line-height: 25px;
-		font-size: 13px;
-	}
-	/*外部倒挂*/
-	.talkbubble {
-		width: 93px;
-		height: 140px;
-		background: #59DFCC;
-		position: relative;
-  		border-radius:10px;
-  		text-align: center;
-  		padding:10px 5px;
-	}
-	.talkbubble:before {
-		content:"";
-		position: absolute;
-		right: 45%;
-		top: 132px;
-		width: 0;
-		height: 0;
-		border-top: 13px solid transparent;
-		border-right: 12px solid #59DFCC;
-		border-bottom: 13px solid transparent;
-		transform:rotate(-90deg);
-	}
-
-	.out-tip{
-		position: absolute;
-		left:0;
-		bottom: 33px;
-	}
-
-	.test-btn{
-		height:34px;
-		padding:0 10px;
-		background-color: #59DFCC;
-		display: block;
-		margin:0 auto;
-		z-index: 1000;
-	}
-
-	.out-tip2{
-		float:left;
-	}
+ .tip-bubble{
+	padding-left:20px;
+	padding-right:20px;
+	border-radius: 30px;
+	text-align: center;
+	background-color: #000;
+	opacity: 0.7;
+	font-size: 13px;
+	color:white;
+	z-index: 1000;
+	border:none;
+	cursor: default;
+	min-width: 100px;
+	height:30px;
+	line-height: 30px;
+	position: fixed;
+	top:50%;
+	left:50%;
+	margin-left:-50px;
+	display: none;
+}
 
 </style>
 
-<div class="test-content">
-	<div class="talkbubble">
-		<p class="dish-name">鱼香肉丝</p>
-		 <div class="praise-num">
-		 	<img src="/images/praise.png" class="praise-icon">50
-		 </div>
-		 <div class="split-line"></div>
-		 <div class="sales-price">
-		 	<p>销量:100</p>
-		 	<p>单价:¥ 180</p>
-		 </div>
+
+ <!-- 测试页 -->
+<div class="emample">
+
+	<h3>示例页</h3>
+
+	<div class="tip-bubble" id="tipBubble">hellohello</div>
+
+	<div>
+		取值&nbsp;
+	    <a href="javascript:void(0);" data="1" ng-click="goPage($event)">1</a>
+	    <a href="javascript:void(0);" data="2" ng-click="goPage($event)">2</a>
+	    <a href="javascript:void(0);" data="3" ng-click="goPage($event)">3</a>
+	    <a href="javascript:void(0);" data="4" ng-click="goPage($event)">4</a>
+	    <a href="javascript:void(0);" data="5" ng-click="goPage($event)">5</a>
 	</div>
 
+	<div class="split-line"></div>
 
-	<!-- 点赞前三名 -->
-		<div class="praise-ranking" style="margin-top:30px;">
-			<div class="ranking-main">
-				<!-- 底部基线 -->
-				<div class="base-line">
-					<!-- 柱状区域 -->
-					<div class="column-board">
-						<div style="position: relative;">
-							<div style="position: absolute;bottom: 0;left:0">
+    <!-- 表单验证 -->
+    <h3>表单验证示例(ng-message)</h3>
+    <div class="col-md-5 show-box">
+        <form name="userForm" novalidate>
+            <div class="form-group" ng-class="{'has-error':userForm.name.$touched && userForm.name.$invalid}">
+                <label>用户名</label>
+                <input type="text" name="name" class="form-control" ng-model="user.name" ng-minlength="5" ng-maxlength="10" required/>
 
-									 <!-- 有可能的外部倒挂 -->
-									 <div class="out-tip2">
-									 		<div class="talkbubble">
-									 			<p class="dish-name">鱼香肉丝</p>
-												 <div class="praise-num">
-												 	<img src="/images/praise.png" class="praise-icon">50
-												 </div>
-												 <div class="split-line"></div>
-												 <div class="sales-price">
-												 	<p>销量:100</p>
-												 	<p>单价:¥ 180</p>
-												 </div>
-									 		</div>
-									 </div>
+                <div class="help-block" ng-messages="userForm.name.$error" ng-if="userForm.name.$touched">
+                    <p ng-message="minlength">用户名最小长度5</p>
+                    <p ng-message="maxlength">用户名最大长度10</p>
+                    <p ng-message="required">用户名必填</p>
+                </div>
+            </div>
 
-									 <div class="out-tip2">
-									 		<div class="talkbubble">
-									 			<p class="dish-name">鱼香肉丝</p>
-												 <div class="praise-num">
-												 	<img src="/images/praise.png" class="praise-icon">50
-												 </div>
-												 <div class="split-line"></div>
-												 <div class="sales-price">
-												 	<p>销量:100</p>
-												 	<p>单价:¥ 180</p>
-												 </div>
-									 		</div>
-									 </div>
+            <div class="form-group" ng-class="{'has-error':userForm.email.$touched && userForm.email.$invalid}">
+                <label>邮箱</label>
+                <input type="email" name="email" class="form-control" ng-model="user.email" ng-minlength="5" ng-maxlength="20" required/>
+     
+                <div class="help-block" ng-messages="userForm.email.$error" ng-if="userForm.email.$touched">
+                    <p ng-message="email">邮箱格式错误</p>
+                    <p ng-message="minlength">邮箱最小长度5</p>
+                    <p ng-message="maxlength">邮箱最大长度10</p>
+                    <p ng-message="required">邮箱必填</p>
+                </div>
+                </div>
 
+            <div class="form-group">
+                <button type="submit" class="btn btn-info" ng-disabled="userForm.$invalid">提交</button>
+            </div>
+        </form>
+    </div>
 
-									 <div class="out-tip2">
-									 		<div class="talkbubble">
-									 			<p class="dish-name">鱼香肉丝</p>
-												 <div class="praise-num">
-												 	<img src="/images/praise.png" class="praise-icon">50
-												 </div>
-												 <div class="split-line"></div>
-												 <div class="sales-price">
-												 	<p>销量:100</p>
-												 	<p>单价:¥ 180</p>
-												 </div>
-									 		</div>
-									 </div>
-
-								 </div>
-							 </div>
-
-
-					</div>
-				</div>
-
-			</div>
-		</div>
-
-		<button type="button" class="test-btn" ng-click="testRand()">点击测试排名显示效果</button>
-
-
-	
 </div>
-	
 
