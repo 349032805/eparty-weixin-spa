@@ -22,6 +22,11 @@ angular
             url: "/waiterRanking",
             templateUrl: "/views/waiterRanking.html",
             controller: 'WaiterRankingCtrl'
+        })
+          .state("hasOrder", {
+            url: "/hasOrder",
+            templateUrl: "/views/hasOrder.html",
+            controller: 'HasOrderCtrl'
         });
        
         $urlRouterProvider.otherwise("/index");
