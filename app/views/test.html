@@ -1,69 +1,69 @@
  <style type="text/css">
 
  .emample{
- 	text-align: center;
- 	padding-top:30px;
+    text-align: center;
+    padding-top:30px;
  }
 
  .split-line{
- 	width:100%;
- 	border-bottom: 1px dashed #999;
- 	margin:20px 0;
+    width:100%;
+    border-bottom: 1px dashed #999;
+    margin:20px 0;
  }
 
 
-.show-box{
+.form-box{
     margin:0 auto; 
     float:none; 
     background:#fff; 
 }
 
  .tip-bubble{
-	padding-left:20px;
-	padding-right:20px;
-	border-radius: 30px;
-	text-align: center;
-	background-color: #000;
-	opacity: 0.7;
-	font-size: 13px;
-	color:white;
-	z-index: 1000;
-	border:none;
-	cursor: default;
-	min-width: 100px;
-	height:30px;
-	line-height: 30px;
-	position: fixed;
-	top:50%;
-	left:50%;
-	margin-left:-50px;
-	display: none;
+    padding-left:20px;
+    padding-right:20px;
+    border-radius: 30px;
+    text-align: center;
+    background-color: #000;
+    opacity: 0.7;
+    font-size: 13px;
+    color:white;
+    z-index: 1000;
+    border:none;
+    cursor: default;
+    min-width: 100px;
+    height:30px;
+    line-height: 30px;
+    position: fixed;
+    top:50%;
+    left:50%;
+    margin-left:-50px;
+    display: none;
 }
 
 </style>
 
-
+<link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
  <!-- 测试页 -->
 <div class="emample">
 
-	<h3>示例页</h3>
+    <h3>示例页</h3>
 
-	<div class="tip-bubble" id="tipBubble">hellohello</div>
+    <div class="tip-bubble" id="tipBubble">hellohello</div>
 
-	<div>
-		取值&nbsp;
-	    <a href="javascript:void(0);" data="1" ng-click="goPage($event)">1</a>
-	    <a href="javascript:void(0);" data="2" ng-click="goPage($event)">2</a>
-	    <a href="javascript:void(0);" data="3" ng-click="goPage($event)">3</a>
-	    <a href="javascript:void(0);" data="4" ng-click="goPage($event)">4</a>
-	    <a href="javascript:void(0);" data="5" ng-click="goPage($event)">5</a>
-	</div>
+    <div>
+        取值&nbsp;
+        <a href="javascript:void(0);" data="1" ng-click="goPage($event)">1</a>
+        <a href="javascript:void(0);" data="2" ng-click="goPage($event)">2</a>
+        <a href="javascript:void(0);" data="3" ng-click="goPage($event)">3</a>
+        <a href="javascript:void(0);" data="4" ng-click="goPage($event)">4</a>
+        <a href="javascript:void(0);" data="5" ng-click="goPage($event)">5</a>
+    </div>
 
-	<div class="split-line"></div>
+    <div class="split-line"></div>
 
     <!-- 表单验证 -->
     <h3>表单验证示例(ng-message)</h3>
-    <div class="col-md-5 show-box">
+    <div class="col-md-5 form-box">
         <form name="userForm" novalidate>
             <div class="form-group" ng-class="{'has-error':userForm.name.$touched && userForm.name.$invalid}">
                 <label>用户名</label>
@@ -93,6 +93,8 @@
             </div>
         </form>
     </div>
+
+    
 
 </div>
 

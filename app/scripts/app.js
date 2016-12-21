@@ -3,7 +3,8 @@
 angular
   .module('eparty', [
     'ngResource',
-    'ui.router'
+    'ui.router',
+    'ngMessages'
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.when("", "/index");
