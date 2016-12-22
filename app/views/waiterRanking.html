@@ -37,40 +37,18 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>NO.1</td>
-					<td>张三</td>
-					<td>4分</td>
-					<td>25</td>
-				</tr>
-				<tr>
-					<td>NO.2</td>
-					<td>张三</td>
-					<td>4分</td>
-					<td>25</td>
-				</tr>
-				<tr>
-					<td>NO.3</td>
-					<td>张三</td>
-					<td>4分</td>
-					<td>25</td>
-				</tr>
-				<tr>
-					<td>NO.4</td>
-					<td>张三</td>
-					<td>4分</td>
-					<td>25</td>
-				</tr>
-				<tr>
-					<td>NO.5</td>
-					<td>张三</td>
-					<td>4分</td>
-					<td>25</td>
+				<tr ng-repeat="item in list">
+					<td>NO.{{$index+1}}</td>
+					<td>{{item.name}}</td>
+					<td>{{item.score}}分</td>
+					<td>{{item.num}}</td>
 				</tr>
 				<tr>
 					<td colspan="4" style="border-bottom: none;color:#999;">加载更多</td>
 				</tr>
 			</tbody>
 		</table>
+
+		<input type="text" value={{helloWorld}}>
 
 	</div>
