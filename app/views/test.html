@@ -105,9 +105,16 @@
          <button type="button" class="btn btn-info" ng-click="getSmsCode()" ng-disabled="smsCodeCountDown"> 获取验证码{{smsCodeCountDown ? '(' + smsCodeCountDown + ')' : ''}}</button>
      </div>
 
+
+    <div style="margin-top:30px;">
+          <h4>数据过滤</h4>
+          <div>{{ 123.456789 | number:2 }}</div>
+     </div>
+
+
      <div style="margin-top:30px;">
           <h4>指令</h4>
-          
+
      </div>
 
 </div>

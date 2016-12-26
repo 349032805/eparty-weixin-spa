@@ -18,11 +18,13 @@
 		border-bottom: 1px solid #E8E8E8;
 	}
 
-	.ranking-icon{
-		width:16px;
-		height:16px;
-		vertical-align: top;
-	}
+
+	.odd {
+      background-color: #E3F0F0;
+    }
+    .even {
+      background-color: #D5E3E3;
+    }
 
 </style>
 
@@ -37,7 +39,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="item in list">
+				<tr ng-repeat="item in list | orderBy: 'score'" ng-class="{even: !$even, odd: !$odd}">
 					<td>NO.{{$index+1}}</td>
 					<td>{{item.name}}</td>
 					<td>{{item.score}}分</td>
