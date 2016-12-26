@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('eparty')
-  .controller('TestCtrl', function ($scope,$http,$location,urlService) {
+  .controller('TestCtrl', function ($scope,$http,$location,$interval,$state,urlService) {
 	 $scope.goPage = function ($event) {
         $scope.page = $event.target.getAttribute('data');
         alert($scope.page);
@@ -39,6 +39,24 @@ angular.module('eparty')
       alert(id);
       alert(tableCode);
     }
+
+    //js跳转页面
+     $scope.gotoPage = function () {
+         $state.go('index');
+         // window.location.href="#/index";
+    }
+
+    //短信验证码倒计时
+    $scope.getSmsCode = function() {
+      $scope.smsCodeCountDown = 10;
+      var countDown = $interval(function() {
+        $scope.smsCodeCountDown--;
+        if ($scope.smsCodeCountDown <= 0) {
+          $interval.cancel(countDown);
+        }
+      }, 1000);
+    }
+
 
 
   });

@@ -98,6 +98,17 @@
     </div>
 
      <button type="button" class="btn btn-info" ng-click="getParams()">获取地址栏参数</button>
+     <button type="button" class="btn btn-info" ng-click="gotoPage()">js跳转页面</button>
+
+     <div style="margin-top:30px;">
+         <h4>js实现倒计时功能</h4>
+         <button type="button" class="btn btn-info" ng-click="getSmsCode()" ng-disabled="smsCodeCountDown"> 获取验证码{{smsCodeCountDown ? '(' + smsCodeCountDown + ')' : ''}}</button>
+     </div>
+
+     <div style="margin-top:30px;">
+          <h4>指令</h4>
+          
+     </div>
 
 </div>
 

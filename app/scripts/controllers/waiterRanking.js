@@ -2,6 +2,7 @@
 
 angular.module('eparty')
   .controller('WaiterRankingCtrl', function ($scope) {
+    $scope.helloWorld = "你好,世界";
 
   	var list = [
    {
@@ -27,6 +28,5 @@ angular.module('eparty')
   ];
 
   $scope.list = list;
-  $scope.helloWorld = "你好,世界";
 
   });
