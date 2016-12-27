@@ -2,9 +2,16 @@
 
 angular.module('eparty')
   .controller('TestCtrl', function ($scope,$http,$location,$interval,$state,urlService) {
+    $scope.helloGril = "你好,妹纸";
+
 	 $scope.goPage = function ($event) {
         $scope.page = $event.target.getAttribute('data');
+        // $scope.page = $event.target.innerText;
+        // $scope.page = $event.target.innerHTML;
         alert($scope.page);
+        var targetEle = angular.element("#targetEle").val();
+        alert(targetEle);
+
     }
 
      $http({
