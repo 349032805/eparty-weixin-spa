@@ -44,6 +44,7 @@ angular.module('eparty')
      $scope.gotoPage = function () {
          $state.go('index');
          // window.location.href="#/index";
+         // $location.path('/index')
     }
 
     //短信验证码倒计时
