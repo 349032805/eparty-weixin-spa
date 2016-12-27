@@ -9,9 +9,7 @@ angular.module('eparty')
         // $scope.page = $event.target.innerText;
         // $scope.page = $event.target.innerHTML;
         alert($scope.page);
-        var targetEle = angular.element("#targetEle").val();
-        alert(targetEle);
-
+        // var targetEle = angular.element("#targetEle").val();
     }
 
      $http({
