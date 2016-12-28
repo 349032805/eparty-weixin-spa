@@ -10,9 +10,12 @@ angular.module('eparty')
         alert($scope.page);
     }
 
-    $scope.getValue = function () {
+    $scope.getModelValue = function () {
      var hello = $scope.hello;
      alert(hello);
+   }
+
+     $scope.getValue = function () {
 
      //不推荐使用
      var targetEle = angular.element("#targetEle").val();

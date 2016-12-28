@@ -2,7 +2,7 @@
 
 angular.module('eparty')
   .controller('WaiterRankingCtrl', function ($scope) {
-    $scope.helloGril = "你好,妹子";
+    $scope.helloGril = "你好,妹纸";
 
   	var list = [
    {

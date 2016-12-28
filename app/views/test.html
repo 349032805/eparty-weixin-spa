@@ -63,7 +63,11 @@
     </div>
 
     <br/>
-    <input type="text" class="form-control" ng-model="hello" id="targetEle">
+    <input type="text" class="form-control" ng-model="hello">
+     <button type="button" class="btn btn-info" ng-click="getModelValue()">获取model值</button>
+    <br/><br/>
+    
+    <input type="text" class="form-control" id="targetEle">
     <span id="targetEle2">你好,妹纸</span>
     <button type="button" class="btn btn-info" ng-click="getValue()">获取值</button>
 
