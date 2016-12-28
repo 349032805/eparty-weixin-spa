@@ -61,9 +61,11 @@
         <a href="javascript:void(0);" data="4" ng-click="goPage($event)">4</a>
         <a href="javascript:void(0);" data="5" ng-click="goPage($event)">5</a>
     </div>
+
     <br/>
-    <input type="text" ng-model="helloGril" id="targetEle">
-    <span ng-model="helloGril" id="targetEle"></span>
+    <input type="text" class="form-control" ng-model="hello" id="targetEle">
+    <span id="targetEle2">你好,妹纸</span>
+    <button type="button" class="btn btn-info" ng-click="getValue()">获取值</button>
 
     <div class="split-line"></div>
 
