@@ -17,7 +17,6 @@ angular.module('eparty')
 
      $scope.getValue = function () {
 
-     //不推荐使用
      var targetEle = angular.element("#targetEle").val();
      var targetEle2 = angular.element("#targetEle2").text();
      alert(targetEle);
