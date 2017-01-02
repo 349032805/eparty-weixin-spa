@@ -53,6 +53,10 @@
 
     <div class="tip-bubble" id="tipBubble"></div>
 
+    <div class="split-line"></div>
+    <p>姓名: <input type="text" class="form-control" ng-model="myName"></p>
+    <p>你输入的为: {{ firstName }}</p>
+
     <div>
         取值&nbsp;
         <a href="javascript:void(0);" data="1" ng-click="goPage($event)">1</a>
@@ -61,15 +65,14 @@
         <a href="javascript:void(0);" data="4" ng-click="goPage($event)">4</a>
         <a href="javascript:void(0);" data="5" ng-click="goPage($event)">5</a>
     </div>
-
     <br/>
-    <input type="text" class="form-control" ng-model="hello">
-     <button type="button" class="btn btn-info" ng-click="getModelValue()">获取model值</button>
-    <br/><br/>
+
+    <p><input type="text" class="form-control" ng-model="hello"></p>
+    <p><button type="button" class="btn btn-info" ng-click="getModelValue()">获取model值</button></p>
     
-    <input type="text" class="form-control" id="targetEle">
-    <span id="targetEle2">你好,妹纸</span>
-    <button type="button" class="btn btn-info" ng-click="getValue()">获取值</button>
+    <p><input type="text" class="form-control" id="targetEle"></p>
+    <p><span id="targetEle2">你好,妹纸</span></p>
+    <p><button type="button" class="btn btn-info" ng-click="getValue()">获取值</button></p>
 
     <div class="split-line"></div>
 
