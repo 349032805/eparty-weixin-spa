@@ -35,7 +35,7 @@
 					<th width="25%">排名</th>
 					<th width="25%">姓名</th>
 					<th width="25%">评分</th>
-					<th width="25%">评价人次</th>
+					<th width="25%">日期</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -43,7 +43,7 @@
 					<td>NO.{{$index+1}}</td>
 					<td>{{item.name}}</td>
 					<td>{{item.score}}分</td>
-					<td>{{item.num}}</td>
+					<td>{{item.date |date:"yyyy-MM-dd"}}</td>
 				</tr>
 				<tr>
 					<td colspan="4" style="border-bottom: none;color:#999;">加载更多</td>

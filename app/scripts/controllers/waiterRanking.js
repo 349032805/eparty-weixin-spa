@@ -8,22 +8,22 @@ angular.module('eparty')
    {
      "name": "张三",
      "score": 80,
-     "num": 40
+     "date": 1483523354510
    },
    {
      "name": "尼古拉斯赵四",
      "score": 99,
-     "num": 88
+     "date": 1483423254510
    },
    {
      "name": "王五",
      "score": 76,
-     "num": 30
+     "date": 1483723454510
    },
     {
      "name": "田七",
      "score": 77,
-     "num": 40
+     "date": 1483926354510
    }
   ];
 
