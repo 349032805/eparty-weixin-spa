@@ -15,6 +15,7 @@ angular.module('eparty')
      alert(hello);
    }
 
+    //不建议使用
      $scope.getValue = function () {
 
      var targetEle = angular.element("#targetEle").val();
@@ -58,6 +59,13 @@ angular.module('eparty')
       //    console.log(resp.statusText);
       //   }, function(resp){
       //    console.log("fail...");
+      // });
+
+
+      // $scope.user.push({
+      //   name:'fan',
+      //   age:20,
+      //   sex:0
       // });
 
       //获取参数
