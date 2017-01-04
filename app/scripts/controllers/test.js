@@ -27,10 +27,21 @@ angular.module('eparty')
      $http({
           method:'GET',
           url:urlService.getBaseUrl()+'/api/v1/stores/6'
-          // params:'';
-      }).then(function(resp){
-      console.log(resp.statusText);
-        }, function(resp){
+          // params:{},
+          // responseType:'json'
+      }).then(function(res){
+      console.log(res.statusText);
+      console.log(res.data);
+        }, function(res){
+        console.log("fail...");
+      });
+
+      $http.get(urlService.getBaseUrl()+'/api/v1/stores/6',{
+          // params:{},
+          // responseType:'json'
+      }).success(function(res){
+          console.log(res);
+        }).error(function(res){
         console.log("fail...");
       });
 
