@@ -76,12 +76,12 @@
 
     <div class="split-line"></div>
 
-    <button class="btn" ng-class="{'btn-primary': vm.selectedWeek === 'lastWeek', 'btn-default': vm.selectedWeek !== 'lastWeek'}"
-        ng-click="vm.selectLastWeek()">上周</button>
-        <button class="btn" ng-class="{'btn-primary': vm.selectedWeek === 'lastTwoWeek', 'btn-default': vm.selectedWeek !== 'lastTwoWeek'}"
-        ng-click="vm.selectLastTwoWeek()">上两周</button>
-        <button class="btn" ng-class="{'btn-primary': vm.selectedWeek === 'lastFourWeek', 'btn-default': vm.selectedWeek !== 'lastFourWeek'}"
-        ng-click="vm.selectLastFourWeek()">上四周</button>
+    <div ng-init="season='spring'">
+        <button class="btn" ng-class="{'btn-info': season === 'spring', 'btn-default': season !== 'spring'}" ng-click="season='spring'">春天</button>
+     <button class="btn" ng-class="{'btn-info': season === 'summer', 'btn-default': season !== 'summer'}" ng-click="season='summer'">夏天</button>
+      <button class="btn" ng-class="{'btn-info': season === 'fall', 'btn-default': season !== 'fall'}" ng-click="season='fall'">秋天</button>
+       <button class="btn" ng-class="{'btn-info': season === 'winter', 'btn-default': season !== 'winter'}" ng-click="season='winter'">冬天</button>
+    </div>
 
     <!-- 表单验证 -->
     <h3>表单验证示例(ng-message)</h3>
