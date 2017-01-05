@@ -7,7 +7,7 @@
   	//生产环境请求地址
   	// var baseUrl = "http://";
 
-   angular.module('eparty').factory('urlService',function() { 
+   angular.module('eparty').service('urlService',function() { 
     var urlService = {
         getBaseUrl:getBaseUrl
     };

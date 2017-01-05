@@ -1,6 +1,6 @@
   'use strict';
 
-   angular.module('eparty').factory('sessionService', ['$q', '$injector',function($q, $injector) { 
+   angular.module('eparty').service('sessionService',function() { 
     var sessionService = {
         login:login,
         logout:logout,
@@ -33,5 +33,5 @@
     }
 
   }  
-]);
+);
 

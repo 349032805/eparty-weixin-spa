@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('eparty')
-  .controller('TestCtrl', function ($scope,$http,$location,$interval,$state,urlService) {
+  .controller('TestCtrl', function ($scope,$http,$location,$interval,$state,urlService,sessionService) {
 
 	 $scope.goPage = function ($event) {
         $scope.page = $event.target.getAttribute('data');
