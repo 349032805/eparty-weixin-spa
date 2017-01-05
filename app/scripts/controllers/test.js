@@ -37,7 +37,7 @@ angular.module('eparty')
         console.log("fail...");
       });
 
-      $http.get(urlService.getBaseUrl()+'/api/v1/stores/6',{
+      $http.post(urlService.getBaseUrl()+'/api/v1/stores/6',{
           // params:{},
           // responseType:'json'
       }).success(function(res){
@@ -45,6 +45,17 @@ angular.module('eparty')
         }).error(function(res){
         console.log("fail...");
       });
+
+
+        // 在jsonp中，url的最后必须严格带上“&callback=JSON_CALLBACK”，而且名字不能改
+    // var url = "http://www.phonegap100.com/appapi.php?a=getPortalList&catid=20&page=1&callback=JSON_CALLBACK";
+    // $http.jsonp(url)
+    //    .success(function (data) { // 在这里定义JSON_CALLBACK。其实与GET差不多
+    //         console.log('jsonp:', data)
+    // })
+    // .error(function (err) {
+    //     console.log('error', err);
+    // });
 
       //   $http({
       //     method:'POST',
