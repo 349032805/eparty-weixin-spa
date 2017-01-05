@@ -11,7 +11,7 @@
     var urlService = {
         getBaseUrl:getBaseUrl
     };
-    return urlService; 
+    return urlService;
 
    	function getBaseUrl() {
    		return baseUrl;

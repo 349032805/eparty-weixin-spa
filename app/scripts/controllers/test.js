@@ -13,6 +13,7 @@ angular.module('eparty')
     $scope.getModelValue = function () {
      var hello = $scope.hello;
      alert(hello);
+     alert(urlService.getBaseUrl());
    }
 
     //不建议使用
