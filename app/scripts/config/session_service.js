@@ -1,24 +1,18 @@
   'use strict';
 
    angular.module('eparty').service('sessionService',function() { 
-    var sessionService = {
-        login:login,
-        logout:logout,
-        isAnonymus:isAnonymus,
-        getAccessToken:getAccessToken
-    };
-    return sessionService; 
 
-   function login(user,accessToken) {
+      this.login = function (user,accessToken){
           window.sessionStorage.setItem("user", user);
           window.sessionStorage.setItem("accessToken", accessToken);
       }
 
-    function logout() {
-      window.sessionStorage.clear();
+      this.logout = function() {
+        alert("qq");
+        window.sessionStorage.clear();
     }
 
-    function isAnonymus() {
+    this.isAnonymus = function(){
       var accessToken = window.sessionStorage.getItem("accessToken");
       if(accessToken != null && accessToken !=""){
         return true;
@@ -27,7 +21,7 @@
       }
     }
 
-    function getAccessToken() {
+    this.getAccessToken = function(){
        var accessToken = window.sessionStorage.getItem("accessToken");
        return accessToken;
     }

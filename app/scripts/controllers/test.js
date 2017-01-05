@@ -13,7 +13,6 @@ angular.module('eparty')
     $scope.getModelValue = function () {
      var hello = $scope.hello;
      alert(hello);
-     alert(urlService.getBaseUrl());
    }
 
     //不建议使用
@@ -28,7 +27,7 @@ angular.module('eparty')
 
      $http({
           method:'GET',
-          url:urlService.getBaseUrl()+'/api/v1/stores/6'
+          url:urlService.baseUrl+'/api/v1/stores/6'
           // params:{},
           // responseType:'json'
       }).then(function(res){
@@ -38,7 +37,7 @@ angular.module('eparty')
         console.log("fail...");
       });
 
-      $http.post(urlService.getBaseUrl()+'/api/v1/stores/6',{
+      $http.post(urlService.baseUrl+'/api/v1/stores/6',{
           // params:{},
           // responseType:'json'
       }).success(function(res){

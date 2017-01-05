@@ -1,21 +1,13 @@
   'use strict';
 
-  	//开发环境请求地址
-  	var baseUrl = "";
-    // var baseUrl = "http://192.168.132.102:8080";
-
-  	//生产环境请求地址
-  	// var baseUrl = "http://";
-
    angular.module('eparty').service('urlService',function() { 
-    var urlService = {
-        getBaseUrl:getBaseUrl
-    };
-    return urlService;
+    
+    //开发环境请求地址
+    this.baseUrl = "";
+    // this.baseUrl = "http://192.168.132.102:8080";
 
-   	function getBaseUrl() {
-   		return baseUrl;
-    }
+    //生产环境请求地址
+    //this.baseUrl = "http://";
 
   }  
 );
