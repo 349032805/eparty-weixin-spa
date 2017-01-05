@@ -2,6 +2,7 @@ eparty-weixin-spa
 
 参考资料
 angular官网 https://docs.angularjs.org/
+https://docs.angularjs.org/api
 
 菜鸟教程 http://www.runoob.com/angularjs/angularjs-tutorial.html
 
