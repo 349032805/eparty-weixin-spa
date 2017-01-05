@@ -1,9 +1,9 @@
   'use strict';
 
-  angular.module('eparty').factory('httpInterceptor', [ '$q', '$injector',function($q, $injector) { 
+  angular.module('eparty').factory('httpInterceptor',function($q, $injector,$rootScope,$timeout) { 
     var httpInterceptor = {
       'responseError' : function(response) {
-        var tipMsg ="";
+        var tipMsg;
         if (response.status == 401) { 
           var rootScope = $injector.get('$rootScope'); 
           var state = $injector.get('$rootScope').$state.current.name; 
@@ -22,9 +22,11 @@
           tipMsg = response.statusText;
         }
 
-        angular.element('#tipBubble').show();
-        angular.element('#tipBubble').text(tipMsg);
-        setTimeout(hideError,2000);
+        $rootScope.serverError = 1;
+        $rootScope.tipMsg = tipMsg;
+        $timeout(function() {
+         $rootScope.serverError = 0;
+        }, 2000);
 
         return $q.reject(response); 
       }, 
@@ -34,13 +36,9 @@
     };
     return httpInterceptor; 
 
-    function hideError(){
-       angular.element('#tipBubble').fadeOut();
-    }
-
   }
 
-]);
+);
 
   angular.module('eparty').config(['$httpProvider', function($httpProvider) {
     $httpProvider.interceptors.push('httpInterceptor');

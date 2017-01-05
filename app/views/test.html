@@ -51,30 +51,37 @@
 
     <h3>示例页</h3>
 
-    <div class="tip-bubble" id="tipBubble"></div>
+    <div class="tip-bubble" ng-show="serverError==1">{{tipMsg}}</div>
 
     <div class="split-line"></div>
     <p>姓名: <input type="text" class="form-control" ng-model="myName"></p>
-    <p>你输入的为: {{ firstName }}</p>
+    <p>你输入的为: {{ myName }}</p>
 
-    <div>
+   <!--  <div>
         取值&nbsp;
         <a href="javascript:void(0);" data="1" ng-click="goPage($event)">1</a>
         <a href="javascript:void(0);" data="2" ng-click="goPage($event)">2</a>
         <a href="javascript:void(0);" data="3" ng-click="goPage($event)">3</a>
         <a href="javascript:void(0);" data="4" ng-click="goPage($event)">4</a>
         <a href="javascript:void(0);" data="5" ng-click="goPage($event)">5</a>
-    </div>
+    </div> -->
     <br/>
 
     <p><input type="text" class="form-control" ng-model="hello"></p>
     <p><button type="button" class="btn btn-info" ng-click="getModelValue()">获取model值</button></p>
     
-    <p><input type="text" class="form-control" id="targetEle"></p>
+   <!--  <p><input type="text" class="form-control" id="targetEle"></p>
     <p><span id="targetEle2">你好,妹纸</span></p>
-    <p><button type="button" class="btn btn-info" ng-click="getValue()">获取值</button></p>
+    <p><button type="button" class="btn btn-info" ng-click="getValue()">获取值</button></p> -->
 
     <div class="split-line"></div>
+
+    <button class="btn" ng-class="{'btn-primary': vm.selectedWeek === 'lastWeek', 'btn-default': vm.selectedWeek !== 'lastWeek'}"
+        ng-click="vm.selectLastWeek()">上周</button>
+        <button class="btn" ng-class="{'btn-primary': vm.selectedWeek === 'lastTwoWeek', 'btn-default': vm.selectedWeek !== 'lastTwoWeek'}"
+        ng-click="vm.selectLastTwoWeek()">上两周</button>
+        <button class="btn" ng-class="{'btn-primary': vm.selectedWeek === 'lastFourWeek', 'btn-default': vm.selectedWeek !== 'lastFourWeek'}"
+        ng-click="vm.selectLastFourWeek()">上四周</button>
 
     <!-- 表单验证 -->
     <h3>表单验证示例(ng-message)</h3>
