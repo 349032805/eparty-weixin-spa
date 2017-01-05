@@ -9,11 +9,8 @@ angular.module('eparty')
 
   	 if(!$rootScope.showTimes){
   	 	$timeout(function() {
-  	 		// angular.element(".load-flash").fadeOut();
          $rootScope.showTimes = 1;
         }, 2000);
-  	}else{
-  		// angular.element(".load-flash").hide();
   	}
     
   });

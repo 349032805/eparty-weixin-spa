@@ -16,13 +16,13 @@ angular.module('eparty')
    }
 
     //不建议使用
-     $scope.getValue = function () {
+    //  $scope.getValue = function () {
 
-     var targetEle = angular.element("#targetEle").val();
-     var targetEle2 = angular.element("#targetEle2").text();
-     alert(targetEle);
-     alert(targetEle2);
-    }
+    //  var targetEle = angular.element("#targetEle").val();
+    //  var targetEle2 = angular.element("#targetEle2").text();
+    //  alert(targetEle);
+    //  alert(targetEle2);
+    // }
 
 
      $http({
