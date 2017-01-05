@@ -2,7 +2,6 @@
 
 angular
   .module('eparty', [
-    'ngResource',
     'ui.router',
     'ngMessages'
   ])
